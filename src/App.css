@@ -1,0 +1,127 @@
+/* 1. Base Styles & Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Modern purple-blue gradient background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.app-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+/* 2. The Sleek Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* 3. Inputs and Buttons */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e1e1e1;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #667eea;
+}
+
+button {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #764ba2;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* 4. The Real-Time Notes Display List */
+.notes-display {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px; /* Limits height so it doesn't grow forever */
+  overflow-y: auto;  /* Adds a scrollbar if needed */
+  padding-right: 5px;
+}
+
+/* Custom Scrollbar for the notes list */
+.notes-display::-webkit-scrollbar {
+  width: 6px;
+}
+.notes-display::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Individual Note Styling */
+.note-item {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.9);
+}
